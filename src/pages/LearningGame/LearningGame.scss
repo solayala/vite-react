@@ -1,0 +1,69 @@
+.learning-game-container {
+  padding: vars.$padding 0;
+
+  .learning-game-title {
+    margin-bottom: 32px;
+    margin-top: 0;
+    padding: 0 vars.$padding;
+    font-weight: 700;
+  }
+
+  .learning-game {
+    padding: 0;
+    
+    .MuiGrid-item {
+      padding: vars.$padding;
+    }
+  }
+
+  .game-card {
+    height: 100%;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: vars.$border-radius;
+    
+    .MuiCardContent-root {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: vars.$padding * 3;
+      background-color: #fff;
+      border-radius: vars.$border-radius;
+    }
+
+    .icon-wrapper {
+      font-size: func.rem(48);
+      margin-bottom: func.rem(16);
+      color: vars.$text-color;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .game-card-title {
+      color: vars.$text-color;
+      margin-bottom: func.rem(12);
+      transition: color 0.2s ease-in-out;
+      font-weight: 700;
+    }
+
+    .game-card-description {
+      color: vars.$text-color;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+      .icon-wrapper,
+      .game-card-title,
+      .game-card-description {
+        color: vars.$primary-color;
+      }
+    }
+  }
+}

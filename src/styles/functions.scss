@@ -1,0 +1,18 @@
+@use "sass:math";
+@use "sass:color";
+
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+@function em($pixels) {
+  @return math.div($pixels, 16) * 1em;
+}
+
+@function lighten-color($color, $percentage) {
+  @return lighten($color, $percentage);
+}
+
+@function darken-color($color, $percentage) {
+  @return darken($color, $percentage);
+}

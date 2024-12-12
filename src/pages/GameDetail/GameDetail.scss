@@ -1,0 +1,123 @@
+.game-setup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: vars.$padding;
+  background-color: vars.$background-color;
+
+  .setup-card {
+    width: 100%;
+    max-width: func.rem(360);
+    border-radius: vars.$border-radius;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .MuiCardContent-root {
+      padding: vars.$padding * 2;
+    }
+
+    .setup-form {
+      @include mix.flex-column;
+      gap: vars.$padding * 2;
+      
+      .setup-title {
+        text-align: center;
+        color: vars.$text-color;
+        font-weight: 600;
+        margin-bottom: vars.$padding;
+        font-size: func.rem(24);
+      }
+
+      .form-field {
+        width: 100%;
+      }
+
+      .start-button {
+        @include mix.button-primary;
+        margin-top: vars.$padding;
+        font-weight: 500;
+        font-size: func.rem(14);
+        text-transform: none;
+      }
+    }
+  }
+}
+
+.results-card {
+  max-width: func.rem(600);
+  margin: vars.$padding * 4 auto;
+  text-align: center;
+
+  .results-text {
+    color: vars.$text-color;
+    font-weight: 600;
+  }
+}
+
+.question-card {
+  max-width: func.rem(600);
+  margin: vars.$padding * 4 auto;
+  text-align: center;
+
+  .MuiCardContent-root {
+    padding: vars.$padding * 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-title {
+    color: vars.$text-color;
+    font-weight: 700;
+    margin-bottom: vars.$padding * 2;
+  }
+
+  .question-title {
+    color: vars.$text-color;
+    font-weight: 600;
+    margin-bottom: vars.$padding;
+    max-width: func.rem(400);
+  }
+
+  .question-description {
+    color: vars.$text-color;
+    margin-bottom: vars.$padding * 2;
+    max-width: func.rem(400);
+  }
+
+  .options-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: vars.$padding;
+    margin: vars.$padding * 2 0;
+    width: 100%;
+    max-width: func.rem(400);
+
+    .option-button {
+      min-width: func.rem(120);
+      border-radius: func.rem(20);
+      padding: vars.$padding vars.$padding * 2;
+      border: 3px solid vars.$secondary-color;
+      
+      &.selected {
+        background-color: vars.$secondary-color;
+        color: vars.$text-color;
+      }
+
+      &:not(.selected) {
+        background-color: transparent;
+        color: vars.$text-color;
+
+        &:hover {
+          background-color: rgba(vars.$secondary-color, 0.1);
+        }
+      }
+    }
+  }
+
+  .next-button {
+    @include mix.button-primary;
+    margin-top: vars.$padding * 2;
+    min-width: func.rem(120);
+  }
+}

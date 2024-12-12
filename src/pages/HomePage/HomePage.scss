@@ -1,0 +1,84 @@
+.home-page {
+  @include mix.flex-column;
+  gap: vars.$padding * 2;
+  padding: vars.$padding * 2;
+
+  .welcome-card, .connect-card {
+    .MuiCardContent-root {
+      padding: 24px;
+    }
+  }
+
+  .welcome-card {
+    .welcome-title {
+      font-weight: 700;
+      color: vars.$text-color;
+    }
+
+    .welcome-subtitle {
+      color: vars.$text-color;
+    }
+
+    .steps-list {
+      padding-left: 0;
+      counter-reset: step-counter;
+      
+      .step-item {
+        display: flex;
+        padding: 4px 0;
+        counter-increment: step-counter;
+
+        &::before {
+          content: counter(step-counter) ".";
+          min-width: 24px;
+          margin-right: 8px;
+          color: vars.$text-color;
+        }
+
+        .step-text {
+          margin: 0;
+          color: vars.$text-color;
+        }
+      }
+    }
+  }
+
+  .connect-card {
+    .MuiCardContent-root {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 0;
+      background-color: white;
+
+      .connect-title {
+        font-weight: 700;
+        color: vars.$text-color;
+      }
+
+      .connect-description {
+        color: vars.$text-color;
+      }
+
+      .connect-button {
+        @include mix.button-primary;
+        margin-top: 16px;
+      }
+    }
+
+    .image-container {
+      flex-shrink: 0;
+
+      .people-image {
+        width: 350px;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}

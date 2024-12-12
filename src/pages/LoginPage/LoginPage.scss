@@ -1,0 +1,27 @@
+.login-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: vars.$background-color;
+  z-index: 1000;
+
+  .login-card {
+    max-width: 400px;
+    width: 100%;
+    margin: 16px;
+    
+    .MuiCardContent-root {
+      padding: 24px;
+    }
+
+    .login-button {
+      @include mix.button-primary;
+      margin-top: 16px;
+    }
+  }
+}

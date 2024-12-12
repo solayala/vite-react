@@ -1,0 +1,81 @@
+@use 'sass:color';
+@use 'variables' as vars;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin card-shadow {
+  background-color: #fff;
+  border-radius: vars.$border-radius;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin button-primary {
+  background-color: vars.$primary-color;
+  color: #fff;
+  border: none;
+  border-radius: vars.$border-radius;
+  padding: vars.$padding;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: color.adjust(vars.$primary-color, $lightness: -10%);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-secondary {
+  background-color: vars.$secondary-color;
+  color: vars.$text-color;
+  border: none;
+  border-radius: vars.$border-radius;
+  padding: vars.$padding;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: color.adjust(vars.$secondary-color, $lightness: -10%);
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: vars.$padding;
+  border: 1px solid #ccc;
+  border-radius: vars.$border-radius;
+  font-family: vars.$font-stack;
+  font-size: vars.$font-size-base;
+  background-color: #f0f0f0;
+  color: vars.$text-color;
+  transition: background-color 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: vars.$primary-color;
+    box-shadow: 0 0 0 2px rgba(vars.$primary-color, 0.2);
+  }
+}

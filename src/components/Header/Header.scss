@@ -1,0 +1,56 @@
+.header {
+  background-color: vars.$menu-background-color !important;
+  color: vars.$text-color !important;
+  z-index: 1201 !important; // MUI drawer is 1200
+
+  .header-toolbar {
+    padding: vars.$padding * 2;
+    @include mix.flex-between;
+  }
+
+  .menu-button {
+    margin-right: vars.$padding * 2;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: vars.$border-radius;
+    }
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .user-section {
+    display: flex;
+    align-items: center;
+    gap: vars.$padding * 2;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: vars.$padding;
+
+    .pet-icon {
+      font-size: 20px;
+      color: vars.$text-color;
+    }
+
+    .username {
+      color: vars.$text-color;
+    }
+  }
+
+  .logout-button {
+    @include mix.button-primary;
+    min-width: 80px;
+    height: 36px;
+    padding: vars.$padding vars.$padding * 2;
+    font-size: vars.$font-size-sm;
+  }
+
+  .login-button {
+    @include mix.button-primary;
+  }
+}
