@@ -14,8 +14,8 @@ The steps for creating this app.
 
    Alternatively, if using Yarn:
    ```bash
-yarn create vite my-vite-react-app --template react
-cd my-vite-react-app
+   yarn create vite my-vite-react-app --template react
+   cd my-vite-react-app
    ```
 
 2. **Install Dependencies**
